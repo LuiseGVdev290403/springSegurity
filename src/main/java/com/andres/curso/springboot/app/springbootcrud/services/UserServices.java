@@ -7,5 +7,6 @@ import java.util.List;
 public interface UserServices {
     List<User> findAll(); //podria devolver dto
     User save(User use);
+    boolean existsByUsername(String username);
 
 }
