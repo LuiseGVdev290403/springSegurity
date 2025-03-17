@@ -32,7 +32,7 @@ public class JpaUserDetailsService implements UserDetailsService {
         }
 
         User user = userOptional.orElseThrow();
-        // nos exige userdetails
+        // nos exige userdetails, para optener todos los roles
         List<GrantedAuthority> authorities = user.getRoleList().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
